@@ -49,7 +49,7 @@
 
 @interface MZDayPicker : UIView
 
-/* 
+/*
  * Font colors (optional)
  */
 @property (nonatomic, strong) UIColor *activeDayColor;
@@ -77,7 +77,7 @@
 @property (nonatomic, readonly) CGFloat dayCellFooterHeight;
 
 /*
- * If you want to set activeDay range, use method: setActiveDaysFrom:toDay: 
+ * If you want to set activeDay range, use method: setActiveDaysFrom:toDay:
  */
 @property (nonatomic, readonly) NSRange activeDays;
 
@@ -94,6 +94,7 @@
 
 @property (nonatomic, weak) id<MZDayPickerDelegate> delegate;
 @property (nonatomic, weak) id<MZDayPickerDataSource> dataSource;
+@property (nonatomic, strong) NSArray *datesWithEvents;
 
 /*
  * Initializers
@@ -132,6 +133,8 @@
  * Cell for MZDay object
  */
 - (MZDayPickerCell *)cellForDay:(MZDay *)day;
+
+- (void)setDatesWithEvents:(NSArray *)datesWithEvents;
 
 @end
 
